@@ -1,0 +1,48 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+     
+    <form method="post" action="/listings/<%=list._id%>/edit?_method=put">
+    <div class="row">
+
+      <div class="col-6 offset-2">
+        <h3>Edit Listing</h3>
+
+        <div class="mt-2">
+            <label for="Title" class="form-label" >Title</label>
+            <input type="text" name="listing[title]" value="<%=list.title%>" class="form-control">
+        </div>
+        
+        <div class="mt-2">
+           <label for="Title" class="form-label">Description</label>
+           <textarea type="text" name="listing[description]" class="form-control"><%=list.description%></textarea>
+
+        </div>
+       
+       <div class="mt-2">
+         <label for="Title" class="form-label">Image</label>
+          <input type="text" name="listing[image]" value="<%=list.image%>" class="form-control">
+       </div>
+      
+       <div class="mt-2">
+        <label for="Title" class="form-label">Price</label>
+        <input type="number" name="listing[price]" value="<%=list.price%>" class="form-control">
+       </div>
+
+       <div class="mt-2">
+        <label for="Title" class="form-label">Country</label>
+         <input type="text" name="listing[country]" value="<%=list.country%>" class="form-control">
+       </div>
+       
+       <div class="mt-2">
+        <label for="Title" class="form-label">Location</label>
+        <input type="text" name="listing[location]" value="<%=list.location%>" class="form-control">
+       </div>
+      
+       <button class="btn editbutton mt-2">edit</button>
+
+    </form>
+ </div>
+
+</div>
+        
+</body>

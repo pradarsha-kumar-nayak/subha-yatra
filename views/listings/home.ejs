@@ -1,0 +1,47 @@
+
+
+
+
+<% layout("/layouts/boilerplate") %> 
+<body>
+    <section>
+        <article class="d-flex flex-column flex-sm-row align-items-center justify-content-center text-center gap-3 py-5">
+
+            <div class="hero-title">
+                Your Journey Begins With the Perfect Stay
+            </div>
+
+            <a href="/listings" class="text-decoration-none">
+               <div class="center-button">
+                <button class="visit-more">visit more</button>
+               </div>
+            </a>
+
+        </article>
+    </section>
+
+    <div class="container">
+        <div class="title-1 text-center text-sm-start">Insparation for your next trip</div>
+
+        <div class="midle-img row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
+
+            <% for(let listing of homlist) {%>
+              <div class="col">
+                <a href="/listings/<%=listing.id%>" class="text-decoration-none">
+                  <div class="card listing-card h-100">
+                    <img src="<%=listing.image%>" class="card-img-top" style="height: 200px; object-fit: cover;" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">
+                        <b><%= listing.title %></b><br>
+                        <%= listing.price.toLocaleString("en-IN",{style:"currency",currency:"INR"}) %>
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            <% } %>
+
+        </div>
+    </div>
+
+</body>

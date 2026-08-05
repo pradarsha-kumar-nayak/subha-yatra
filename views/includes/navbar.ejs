@@ -1,0 +1,83 @@
+ <!-- <header >
+        <div class="d-flex gap-2 align-items-center">
+            <span class="logo bi bi-airplane-fill fs-4"></span>
+            <sapn class="web-name fw-medium">SUBHA YATRA</sapn>
+        </div>
+
+        <nav class="d-flex gap-3">
+            <a href="/home" class="fs-6 ">Home</a>
+            <a href="/listings" class="fs-6">Visit more</a>
+            <a href="/listings/new" class="fs-6">Add new Listing</a>
+
+        </nav>
+
+        
+       <form method="get" action="/listings/search">
+          <div class="input-group" style="max-width: 280px;">
+           <input type="text" placeholder="search location" class="form-control" name="q">
+           <button class="search-btn bi bi-search btn btn btn-dark"></button>
+         </div>
+       </form>
+       
+
+        <div class="d-flex gap-3">
+            <%if(!currUser){%>
+                <a href="/signup" class="fs-6 ">Signin</a>
+                <a href="/login" class="fs-6">Login</a>
+           <%}%>
+            
+           <%if(currUser){%>
+            <a href="/logout" class="fs-6">Logout</a>
+            <%}%>
+        </div>
+
+        <div>
+           <span class="bi bi-person-circle"></span>
+        </div>
+    </header> -->
+
+
+    <header class="d-flex align-items-center justify-content-between px-3 py-2">
+    <!-- Logo - hamesha left me dikhega -->
+    <div class="d-flex gap-2 align-items-center">
+        <span class="logo bi bi-airplane-fill fs-4"></span>
+        <span class="web-name fw-medium">SUBHA YATRA</span>
+    </div>
+
+    <!-- Search bar - hamesha middle me dikhega -->
+    <form method="get" action="/listings/search" class="flex-grow-1 mx-3" style="max-width: 280px;">
+        <div class="input-group">
+            <input type="text" placeholder="search location" class="form-control" name="q">
+            <button class="search-btn bi bi-search btn btn-dark"></button>
+        </div>
+    </form>
+
+    <!-- Hamburger button - sirf chote screen pe dikhega -->
+    <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="bi bi-list fs-3"></span>
+    </button>
+
+    <!-- Ye pura block collapse hoga chote screen pe -->
+    <div class="collapse d-lg-flex align-items-center gap-3" id="navMenu">
+        <nav class="d-flex flex-column flex-lg-row gap-3">
+            <a href="/home" class="fs-6">Home</a>
+            <a href="/listings" class="fs-6">Visit more</a>
+            <a href="/listings/new" class="fs-6">Add new Listing</a>
+        </nav>
+
+        <div class="d-flex flex-column flex-lg-row gap-3">
+            <% if(!currUser){ %>
+                <a href="/signup" class="fs-6">Signin</a>
+                <a href="/login" class="fs-6">Login</a>
+            <% } %>
+            <% if(currUser){ %>
+                <a href="/logout" class="fs-6">Logout</a>
+                 <a href="/listings/wishlist" class="fs-6">Wishlist</a>
+            <% } %>
+        </div>
+
+        <div>
+          <a href="/profile"><span class="bi bi-person-circle fs-4"></span></a>
+        </div>
+    </div>
+</header>
